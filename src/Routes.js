@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import  Poster from './components/Poster';
-import Logincontroller  from './components/Logincontroller';
+
 import Register from './components/Register';
 import PageNotFound from './components/PageNotFound';
 import Navbar from './components/Navbar';
@@ -22,15 +22,30 @@ import Addproduct from './components/Admin/Addproduct';
 import Updateproduct from './components/Admin/Updateproduct';
 import Viewproduct from './components/Admin/Viewproduct';
 import Tab from './components/Admin/Tab';
-
+import Creport from './components/Admin/Creport';
+import Addstaff from './components/Admin/Addstaff';
+import { useState } from 'react';
+import Alert from "./components/Alert";
 //const history=createBrowserHistory(); 
 const Routes = () => {
+    const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type)=>{
+    setAlert({
+      msg: message,
+      type: type
+    })
+    setTimeout(() => {
+        setAlert(null);
+    }, 1500);
+}
     return (
         <div>
             <Router history={history}>
 
                 <div>
                     <Navbar title="Buddies Canteen" home="Home" abt="About" login="Login"/>
+                    <Alert alert={alert}/>
                     <div>
                         <Switch>
                             <Route exact path="/"> <Home /> </Route>
@@ -45,11 +60,13 @@ const Routes = () => {
                             <Route path="/dashboard"><Dashboard/></Route>
                             <Route path="/tab"><Tab/></Route>
                             <Route path="/product"><Product/></Route>
-                            <Route path='/addproduct'><Addproduct/></Route>
+                            <Route path='/addproduct'><Addproduct showAlert={showAlert}/></Route>
                             <Route path="/allproduct"><Allproduct/></Route>
-                            <Route path="/updateproduct/:productId"><Updateproduct/></Route>
-                            <Route path="/viewproduct/:productId"><Viewproduct/></Route>
+                            <Route path="/updateproduct/:productId"><Updateproduct showAlert={showAlert}/></Route>
+                            <Route path="/viewproduct/:productId"><Viewproduct showAlert={showAlert}/></Route>
+                            <Route path="/creport"><Creport/></Route>
                             <Route path="/menu"><Menus/></Route>
+                            <Route path="/addstaff"><Addstaff/></Route>
                             <Route path="/*"> <PageNotFound /> </Route>
                         </Switch>
                     </div>

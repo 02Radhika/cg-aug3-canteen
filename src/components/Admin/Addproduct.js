@@ -1,16 +1,23 @@
 import React, { useState } from "react";
-import axios from 'axios'
+import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import base_url from "../../api/Bootapi";
 import { Link } from "react-router-dom";
-const AddProduct = () => {
+
+const AddProduct = (props) => {
   let history = useHistory();
+
+  
   const [product, setProduct] = useState({
     productName: "",
     productPrice: "",
     productCategory: "",  
 
   });
+
+  const [productNameErr,setproductNameErr]=useState({});
+  const [productPriceErr,setproductPriceErr]=useState({});
+  
 
   const addQty=(e)=>{
 
@@ -23,6 +30,15 @@ const AddProduct = () => {
   const onInputChange = e => {
     setProduct({ ...product, [e.target.name]: e.target.value });
   };
+  
+  
+  const handleChange=(e)=>{
+    debugger
+    let category=product;
+    category.productCategory=e.target.value;
+    console.log(category);
+    setProduct({...category});
+  }
 
     const reset = () => {
         setProduct({ productName: ''})
@@ -32,15 +48,45 @@ const AddProduct = () => {
     }
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.post( `${base_url}/addProduct`, product);
-    history.push("/dashboard");
+    const isValid =formValidation();
+    if(isValid){
+      await axios.post( `${base_url}/addProduct`, product);
+      history.push("/dashboard");
+      props.showAlert("Product Added Sucessfully" ,"success");
+    }
   };
+
+  const formValidation=()=>{
+    const productNameErr={};
+    const productPriceErr={};
+    let isValid=true;
+    //var namePattern = new RegExp(/^[a-zA-Z ]+$/);
+    if(!productName.match(new RegExp(/^[a-zA-Z ]+$/))){
+      productNameErr.productrejex="Product Name Should Container Character";
+      setProduct({ productName: ''})
+      isValid=false;
+    }
+    if(!productPrice.match(new RegExp(/^[+]?[0-9]+$/))){
+      productPriceErr.propricterr="Product Price Should Container Number";
+      setProduct({ productPrice: ''})
+      isValid=false;
+    }
+    setproductNameErr(productNameErr);
+    setproductPriceErr(productPriceErr);
+    return isValid;
+    
+  }
+
+
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4 ">Add A Product</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
+            <div>{Object.keys(productNameErr).map((key)=>{
+             return <div style={{color: "red"}}>{productNameErr[key]}</div>
+            })}</div>
             <input
               type="text"
               className="form-control form-control-lg"
@@ -51,9 +97,13 @@ const AddProduct = () => {
               required
             />
           </div>
+          
           <div className="form-group">
+          <div>{Object.keys(productPriceErr).map((key)=>{
+            return <div style={{color: "red"}}>{productPriceErr[key]}</div>
+          })}</div>
             <input
-              type="number"
+              type="text"
               className="form-control form-control-lg"
               placeholder="Enter Product Price"
               name="productPrice"
@@ -61,24 +111,18 @@ const AddProduct = () => {
               onChange={e => onInputChange(e)}
               required
             />
-          </div>
-          <div className="form-group">
-          <label>
-            <input list="products" name="productCategory" value={productCategory}
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter product Category"
-
-              onChange={e => onInputChange(e)}
-              required
-            /></label>
-            <datalist id="products">
-                        <option value="Snacks"/>
-                        <option value="Beverages"/>       
-            </datalist>
             
           </div>
           
+          <div className="form-group">
+
+              <select value={product.productCategory} className="form-control form-control-lg" onChange={e=>handleChange(e)}>
+                <option value=""></option>           
+                <option value="Snacks">Snacks</option>
+                <option value="Beverages">Beverages</option>
+              </select>
+          </div>
+            
           <div className="form-group">
             <input
               type="number"

@@ -3,13 +3,13 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import base_url from "../../api/Bootapi";
 
-const Viewproduct = () => {
+const Viewproduct = (props) => {
   const [product, setProduct] = useState({
     productId:0,
     productName: "",
     productPrice:0 ,
     productCategory: "",
-    menu:"",
+    menu:""
     
   });
   const { productId } = useParams();
@@ -19,6 +19,7 @@ const Viewproduct = () => {
   }, []);
   const loadProduct = async () => {
     const res = await axios.get(`${base_url}/getProductById/${productId}`);
+    props.showAlert("Product Info" ,"success");
     setProduct(res.data);
   };
   return (
@@ -31,7 +32,7 @@ const Viewproduct = () => {
         <li className="list-group-item">Product Name: {product.productName}</li>
         <li className="list-group-item">Product Price: {product.productPrice}</li>
         <li className="list-group-item">Product Category: {product.productCategory}</li>
-        <li className="list-group-item">Product Menu: {product.menu.menuQuntity}</li>
+        <li className="list-group-item">Product Menuquntity: {product.menu.menuQuntity}</li>
       </ul>
     </div>
   );

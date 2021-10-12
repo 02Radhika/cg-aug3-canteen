@@ -3,10 +3,10 @@ import {useState, useEffect } from "react";
 import base_url from "../../api/Bootapi";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { withRouter } from 'react-router-dom';
 
 
-
-function Producttable(){
+function Producttable(props){
     
     const [products, setProduct] = useState([]);
 
@@ -19,9 +19,25 @@ function Producttable(){
         setProduct(result.data);
     };
 
-    const deleteProduct = async productId => {
-        await axios.delete(`${base_url}/deleteProduct/${productId}`);
-        loadProduct();
+    // const deleteProduct = async productId => {
+    //     await axios.delete(`${base_url}/deleteProduct/${productId}`);
+    //     loadProduct();
+    // };
+    const deleteProduct=(productId)=>{
+
+        axios.delete(`${base_url}/deleteProduct/${productId}`).then(
+            (Response)=>{
+                debugger
+                alert("product deleted sucessfully");
+                loadProduct();
+                //props.history.push("/dashboard");
+
+                //update(productId);
+            },
+            (error)=>{
+                console.log("error");
+            }
+        )
     };
 
   return (
@@ -57,7 +73,7 @@ function Producttable(){
                     </Link>
                     <Link
                         class="btn btn-danger"
-                        onClick={() => deleteProduct(product.productId)}
+                        onClick={()=>{deleteProduct(product.productId);}}
                     >
                         Delete
                     </Link>
@@ -71,4 +87,4 @@ function Producttable(){
     );
 }
 
-export default Producttable;
+export default withRouter(Producttable);

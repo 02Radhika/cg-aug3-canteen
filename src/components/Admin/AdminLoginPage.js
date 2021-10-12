@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import base_url from "../../api/Bootapi";
 
 
-
   function AdminLoginPage(props) {
     const [loading, setLoading] = useState(false);
     const adminUsername = useFormInput('');
@@ -25,7 +24,7 @@ import base_url from "../../api/Bootapi";
       props.history.push('/dashboard');
     }).catch(error => {
       setLoading(false);
-       if (error.response.status === 401) setError(error.response.data.message);
+       if (error.response.status === 404||500) setError("Invalid Username or Password");
        else setError("Something went wrong. Please try again later.");
     });
 
@@ -39,9 +38,11 @@ import base_url from "../../api/Bootapi";
           <form>
             <div className="form-group">
               <input
-                type="text" {...adminUsername}
+                type="email" {...adminUsername}
+                //pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 className="form-control form-control-lg"
                 placeholder="Enter Admin UserName"
+                required
               />
             </div>
 
@@ -50,6 +51,7 @@ import base_url from "../../api/Bootapi";
                 type="password" {...adminPassword}
                 className="form-control form-control-lg"
                 placeholder="Enter Admin Password"
+                required
               />
             </div>
             {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />

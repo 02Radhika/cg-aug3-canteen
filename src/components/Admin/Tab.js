@@ -16,13 +16,23 @@ function Tab() {
     return(
         <ul className="nav justify-content-center bg-info">
             <li className="nav-item">
-                <Link className="nav-link active text-light bg-dark" aria-current="page" to="/addproduct">Add Product</Link>
+                <Link className="nav-link active text-light bg-dark mx-1" aria-current="page" to="/addproduct">Add Product</Link>
             </li>
+            
             <li className="nav-item ">
-                <Link className="nav-link text-light bg-dark mx-1" to="#" >Report</Link>
+                <Link className="nav-link text-light bg-dark mx-1" to="/creport" >Customer Report</Link>
             </li>
+
+            <li className="nav-item ">
+                <Link className="nav-link text-light bg-dark mx-1" to="/creport" >Order Details Report</Link>
+            </li>
+
+            <li className="nav-item ">
+                <Link className="nav-link text-light bg-dark mx-1" to="/creport" >Total Sales</Link>
+            </li>
+
             <li className="nav-item">
-                <a className="nav-link text-light bg-dark" onClick={handleLogout}>Logout</a>
+                <a className="nav-link text-light bg-dark mx-1" onClick={handleLogout}>Logout</a>
                 {/* <input type="button" onClick={handleLogout} value="Logout"/> */}
             </li>
             <li className="nav-item">

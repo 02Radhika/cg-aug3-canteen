@@ -5,43 +5,89 @@ import { withRouter } from 'react-router-dom';
 import base_url from "../../api/Bootapi";
 import { Link } from "react-router-dom";
 
-const Updateproduct = () => {
+const Updateproduct = (props) => {
   let history = useHistory();
   const { productId } = useParams();
-  //alert(productId);
-  const [product, setProduct] = useState({
-    //productId:"" ,
-    productName: "",
-    productPrice: 0,
-    productCategory: "",
-  });
-
-  
-  const { productName, productPrice, productCategory} = product;
-  const onInputChange = e => {
-    setProduct({ ...product, [e.target.name]: e.target.value });
-  };
  
-  useEffect(() => {
-    loadProduct();
-  }, []);
-
-  const onSubmit = async e => {
-    e.preventDefault();
-    await axios.put(`${base_url}/updateProduct`, product);
-    history.push("/dashboard");
-  };
+  const [product, setProduct] = useState({
+    
+    productName: "",
+    productPrice: "",
+    productCategory: "",
+    menu:""
+  });
+  const [productNameErr,setproductNameErr]=useState({});
+  const [productPriceErr,setproductPriceErr]=useState({});
 
   const loadProduct = async () => {
     const result = await axios.get(`${base_url}/getProductById/${productId}`);
     setProduct(result.data);
+  }; 
+
+  useEffect(() => {
+    loadProduct();
+  }, []);
+  const { productName, productPrice, productCategory,menu} = product;
+  const onInputChange = e => {
+    setProduct({ ...product, [e.target.name]: e.target.value });
   };
+  
+  
+  const updateQty=(e)=>{
+
+    let menu={
+            menuQuntity:e.target.value
+        }
+    setProduct({...product,menu});
+    }
+
+    const handleChange=(e)=>{
+      debugger
+      let category=product;
+      category.productCategory=e.target.value;
+      console.log(category);
+      setProduct({...category});
+    }
+  const onSubmit = async e => {
+    e.preventDefault();
+    const isValid=formValidation();
+    if(isValid){
+      await axios.put(`${base_url}/updateProduct`, product);
+      console.log(product);
+      history.push("/dashboard");
+      props.showAlert("Product Updated Sucessfully" ,"success");
+    }
+  };
+
+  
+  const formValidation=()=>{
+    const productNameErr={};
+    const productPriceErr={};
+    let isValid=true;
+    //var namePattern = new RegExp(/^[a-zA-Z ]+$/);
+    if(!productName.match(new RegExp(/^[a-zA-Z ]+$/))){
+      productNameErr.productrejex="Product Name Should Container Character";
+      //setProduct({ productName: ''})
+      isValid=false;
+    }
+    if(!productPrice.match(new RegExp(/^[+]?[0-9]+$/))){
+      productPriceErr.propricterr="Product Price Should Container Number";
+      isValid=false;
+    }
+    setproductNameErr(productNameErr);
+    setproductPriceErr(productPriceErr);
+    return isValid;
+    
+  }
   return (
     <div className="container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4">Update Product</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
+            <div>{Object.keys(productNameErr).map((key)=>{
+             return <div style={{color: "red"}}>{productNameErr[key]}</div>
+            })}</div>
             <input
               type="text"
               className="form-control form-control-lg"
@@ -52,9 +98,13 @@ const Updateproduct = () => {
               required
             />
           </div>
+          
           <div className="form-group">
+          <div>{Object.keys(productPriceErr).map((key)=>{
+            return <div style={{color: "red"}}>{productPriceErr[key]}</div>
+          })}</div>
             <input
-              type="number"
+              type="text"
               className="form-control form-control-lg"
               placeholder="Product Price"
               name="productPrice"
@@ -63,20 +113,14 @@ const Updateproduct = () => {
               required
             />
           </div>
-          <div className="form-group">
-          <label>
-            <input list="products" name="productCategory" value={productCategory}
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter product Category"
 
-              onChange={e => onInputChange(e)}
-              required
-            /></label>
-            <datalist id="products">
-                        <option value="Snacks"/>
-                        <option value="Beverages"/>       
-            </datalist>
+          <div className="form-group">
+
+              <select value={product.productCategory} className="form-control form-control-lg" onChange={e=>handleChange(e)}>
+                <option value="">Click Here</option>           
+                <option value="Snacks">Snacks</option>
+                <option value="Beverages">Beverages</option>
+              </select>
           </div>
 
           <div className="form-group">
@@ -85,8 +129,8 @@ const Updateproduct = () => {
               className="form-control form-control-lg"
               placeholder="Enter Menu Quantity"
               name="menu"
-              //value={menu}
-              //onChange={(e)=>{addQty(e)}}
+              value={menu && menu.menuQuntity}
+              onChange={(e)=>{updateQty(e)}}
               required
             />
           </div>
