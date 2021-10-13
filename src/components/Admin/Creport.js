@@ -3,7 +3,7 @@ import {useState, useEffect } from "react";
 import base_url from "../../api/Bootapi";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import '../../components/Home.css';
 
 
 function Creport(){
@@ -22,7 +22,7 @@ function Creport(){
     
 
   return (
-        <div className="container">
+        <div className="Creport container">
         <div className="py-4">
             <h1>Customer Report</h1>
             <table class="table border shadow">

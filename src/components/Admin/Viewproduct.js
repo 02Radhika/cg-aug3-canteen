@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import base_url from "../../api/Bootapi";
+import '../../components/Home.css';
 
 const Viewproduct = (props) => {
   const [product, setProduct] = useState({
@@ -23,7 +24,7 @@ const Viewproduct = (props) => {
     setProduct(res.data);
   };
   return (
-    <div className="container py-4">
+    <div className=" View container py-4">
       <Link className="btn btn-primary" to="/dashboard">Back to Dashboard</Link>
       <h1 className="display-4">Product Discription</h1>
       <hr />

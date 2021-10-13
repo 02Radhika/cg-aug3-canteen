@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 import base_url from "../../api/Bootapi";
 import { Link } from "react-router-dom";
+import '../../components/Home.css';
 
 const Updateproduct = (props) => {
   let history = useHistory();
@@ -82,7 +83,7 @@ const Updateproduct = (props) => {
     
   }
   return (
-    <div className="container">
+    <div className="Update container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4">Update Product</h2>
         <form onSubmit={e => onSubmit(e)}>
@@ -138,7 +139,7 @@ const Updateproduct = (props) => {
           </div>
           
           <button className="btn btn-warning btn-block" data-testid="submit3">Update Product</button>
-          {/* <Link className="btn btn-warning btn-block" to="/dashboard">Back to Dashboard</Link> */}
+          <Link className="btn btn-warning btn-block" to="/dashboard">Back to Dashboard</Link>
         </form>
       </div>
     </div>

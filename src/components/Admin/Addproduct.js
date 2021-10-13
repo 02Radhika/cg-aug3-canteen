@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import base_url from "../../api/Bootapi";
 //import { Link } from "react-router-dom";
+import '../../components/Home.css';
 
 const AddProduct = (props) => {
   let history = useHistory();
@@ -80,7 +81,7 @@ const AddProduct = (props) => {
 
 
   return (
-    <div className="container">
+    <div className="Addproduct container">
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4 ">Add A Product</h2>
         <form onSubmit={e => onSubmit(e)}>

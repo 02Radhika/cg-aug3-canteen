@@ -39,7 +39,7 @@ const Routes = () => {
     })
     setTimeout(() => {
         setAlert(null);
-    }, 1500);
+    }, 2000);
 }
     return (
         <div>
@@ -51,29 +51,29 @@ const Routes = () => {
                     <div>
                         <Switch>
                             <Route exact path="/"> <Home /> </Route>
-                            <Route path="/home"> <Home /> </Route>
-                            <Route path="/poster"><Poster/></Route>
-                            <Route path="/about"> <About /> </Route>
+                            <Route exact path="/home"> <Home /> </Route>
+                            <Route exact path="/poster"><Poster/></Route>
+                            <Route exact path="/about"> <About /> </Route>
                             {/* <Route exact path="/mainpage"> <Card /> </Route> */}
-                            <Route path="/register"> <Register /> </Route>
-                            <Route path="/bsstuff"><BsStuff/></Route>
-                            <Route path="/Card"><Card/></Route>
-                            <Route path="/adminLoginPage"><AdminLoginPage/></Route>
-                            <Route path="/dashboard"><Dashboard/></Route>
-                            <Route path="/tab"><Tab/></Route>
-                            <Route path="/product"><Product/></Route>
-                            <Route path='/addproduct'><Addproduct /*showAlert={showAlert}*//></Route>
-                            <Route path="/allproduct"><Allproduct/></Route>
-                            <Route path="/updateproduct/:productId"><Updateproduct showAlert={showAlert}/></Route>
-                            <Route path="/viewproduct/:productId"><Viewproduct showAlert={showAlert}/></Route>
-                            <Route path="/creport"><Creport/></Route>
-                            <Route path="/oreport"><Oreport/></Route>
-                            <Route path="/menu"><Menus/></Route>
-                            <Route path="/addstaff"><Addstaff/></Route>
-                            <Route path="/*"> <PageNotFound /> </Route>
+                            <Route exact path="/register"> <Register /> </Route>
+                            <Route exact path="/bsstuff"><BsStuff/></Route>
+                            <Route exact path="/Card"><Card/></Route>
+                            <Route exact path="/adminLoginPage"><AdminLoginPage/></Route>
+                            <Route exact path="/dashboard"><Dashboard/></Route>
+                            <Route exact path="/tab"><Tab/></Route>
+                            <Route exact path="/product"><Product/></Route>
+                            <Route exact path='/addproduct'><Addproduct showAlert={showAlert}/></Route>
+                            <Route exact path="/allproduct"><Allproduct/></Route>
+                            <Route exact path="/updateproduct/:productId"><Updateproduct showAlert={showAlert}/></Route>
+                            <Route exact path="/viewproduct/:productId"><Viewproduct showAlert={showAlert}/></Route>
+                            <Route exact path="/creport"><Creport/></Route>
+                            <Route exact path="/oreport"><Oreport/></Route>
+                            <Route exact path="/menu"><Menus/></Route>
+                            <Route exact path="/addstaff"><Addstaff/></Route>
+                            <Route exact path="/*"> <PageNotFound /> </Route>
                         </Switch>
                     </div>
-                    {/* <Footer /> */}
+                    <Footer />
                 </div>
             </Router>
         </div>

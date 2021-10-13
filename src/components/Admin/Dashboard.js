@@ -21,7 +21,7 @@ function Dashboard(props) {
           <Poster/>
           <Tab/>
           <Producttable/>
-          <input type="button" onClick={handleLogout} value="Logout" />
+          {/* <input type="button" onClick={handleLogout} value="Logout" /> */}
       </div>
   
   );

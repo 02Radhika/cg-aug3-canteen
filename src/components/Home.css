@@ -7,12 +7,12 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 99vw;
-    height: 93vh;
+    height: 90vh;
     overflow-x: hidden;
   }
 
 
-  .About  {
+  .About{
     background:url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v960-ning-30.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=63dd5f402645ef52fb7dfb592aec765a);
     background-repeat: no-repeat;
     background-position: center;
@@ -43,7 +43,7 @@
 } 
 
 .Login{
-   background:url(https://st3.depositphotos.com/1558912/19061/i/1600/depositphotos_190618700-stock-photo-italian-food-background-on-white.jpg);
+   background:url(https://wallpapercave.com/wp/wp2508260.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -55,12 +55,69 @@
   /* rgba(211, 190, 190, 0.5),#656e57), */
 
 .Admin{
-  background:url(https://images.unsplash.com/photo-1505826759037-406b40feb4cd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGZhc3QlMjBmb29kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80);
+  background:url(https://image.shutterstock.com/image-photo/admin-login-sign-made-wood-260nw-391517770.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     width: 99vw;
-    height: 90vh;
+    height: 80vh;
+}
+
+.View{
+  background:linear-gradient(rgba(83, 49, 49, 0.5),#4b572e),url(http://www.saurabhkarwal.com/wp-content/uploads/2018/03/Background-opera-speeddials-community-web-simple-backgrounds.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 80vh;
+}
+
+.Creport{
+  background:linear-gradient(rgba(184, 145, 145, 0.5),#4b572e),url(http://www.saurabhkarwal.com/wp-content/uploads/2018/03/Background-opera-speeddials-community-web-simple-backgrounds.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 80vh;
+}
+
+
+
+.Oreport{
+  background:linear-gradient(rgba(184, 145, 145, 0.5),#4b572e),url(http://www.saurabhkarwal.com/wp-content/uploads/2018/03/Background-opera-speeddials-community-web-simple-backgrounds.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 80vh;
+}
+
+.Addproduct{
+  background:url(https://wallpapercave.com/wp/wp2508260.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 80vh;
+}
+
+.Update{
+  background:url(https://wallpapercave.com/wp/wp2508260.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 80vh;
 }

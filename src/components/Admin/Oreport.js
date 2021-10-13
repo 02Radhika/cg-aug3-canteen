@@ -3,51 +3,50 @@ import {useState, useEffect } from "react";
 import base_url from "../../api/Bootapi";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import '../../components/Home.css';
 
 
-
-function Creport(){
+function Oreport(){
     
-    const [customers, setCustomer] = useState([]);
+    const [staffs, setStaff] = useState([]);
 
     useEffect(() => {
-        loadCustomer();
+        loadStaff();
     }, []);
 
-    const loadCustomer = async () => {
-        const result = await axios.get(`${base_url}/getAllCustomer`);
-        setCustomer(result.data);
-        console.log(result.data);
+    const loadStaff = async () => {
+        const result = await axios.get(`${base_url}/getAllStaff`);
+        setStaff(result.data);
     };
 
     
 
   return (
-        <div className="container">
+        <div className="Oreport container">
         <div className="py-4">
-            <h1>Order Report Per Customer </h1>
+            <h1>Staff Info</h1>
             <table class="table border shadow">
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">Order Id</th>
-                <th scope="col">Total Price</th>
-                <th scope="col">Status</th>
-                <th scope="col">Date</th>
-                <th scope="col">Customer Name</th>
-                <th scope="col">Customer Id</th>
+                <th scope="col">Staff Name</th>
+                <th scope="col">Staff Address</th>
+                <th scope="col">Staff City</th>
+                <th scope="col">Staff Gender</th>
+                <th scope="col">Staff Phone</th>
+                <th scope="col">Staff Username</th>
                 </tr>
             </thead>
             <tbody>
-                {customers.map((customer, index) => (
+                {staffs.map((staff, index) => (
                 <tr>
                     <th scope="row">{index+1}</th>
-                    <td>{customer.orders.orders_id}</td>
-                    <td>{customer.orders.totalPrice}</td>
-                    <td>{customer.orders.status}</td>
-                    <td>{customer.orders.date}</td>
-                    <td>{customer.cName}</td>
-                    <td>{customer.cId}</td>
+                    <td>{staff.staffName}</td>
+                    <td>{staff.staffAddress}</td>
+                    <td>{staff.staffCity}</td>
+                    <td>{staff.staffGender}</td>
+                    <td>{staff.staffPhone}</td>
+                    <td>{staff.staffUsername}</td>
                     
                 </tr>
                 ))}
@@ -59,4 +58,4 @@ function Creport(){
     );
 }
 
-export default Creport;
+export default Oreport;
