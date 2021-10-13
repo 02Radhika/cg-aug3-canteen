@@ -69,7 +69,7 @@ const Updateproduct = (props) => {
     debugger
     if(!productName.match(new RegExp(/^[a-zA-Z ]+$/))){
       productNameErr.productrejex="Product Name Should Container Character";
-      //setProduct({ productName: ''})
+      //setProduct({...product,productName: ''})
       isValid=false;
     }
     if(!productPrice.match(new RegExp(/^[+]?[0-9]+$/))){
@@ -137,12 +137,12 @@ const Updateproduct = (props) => {
             />
           </div>
           
-          <button className="btn btn-warning btn-block">Update Product</button>
-          <Link className="btn btn-warning btn-block" to="/dashboard">Back to Dashboard</Link>
+          <button className="btn btn-warning btn-block" data-testid="submit3">Update Product</button>
+          {/* <Link className="btn btn-warning btn-block" to="/dashboard">Back to Dashboard</Link> */}
         </form>
       </div>
     </div>
   );
 };
 
-export default withRouter(Updateproduct);
+export default Updateproduct;

@@ -55,7 +55,7 @@ import '../../components/Home.css';
               />
             </div>
             {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
-            <button className="btn btn-primary btn-block" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} >Login</button>
+            <button className="btn btn-primary btn-block" data-testid="submit" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} >Login</button>
           </form>
       </div>
     </div>
@@ -76,8 +76,8 @@ const useFormInput = initialValue => {
   }
 }
 
-
-export default withRouter(AdminLoginPage);
+//export default AdminLoginPage;
+ export default withRouter(AdminLoginPage);
 
 
 //   const options = {

@@ -90,4 +90,4 @@ function Producttable(props){
     );
 }
 
-export default withRouter(Producttable);
+export default Producttable;

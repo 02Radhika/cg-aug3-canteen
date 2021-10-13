@@ -62,7 +62,7 @@ const Routes = () => {
                             <Route path="/dashboard"><Dashboard/></Route>
                             <Route path="/tab"><Tab/></Route>
                             <Route path="/product"><Product/></Route>
-                            <Route path='/addproduct'><Addproduct showAlert={showAlert}/></Route>
+                            <Route path='/addproduct'><Addproduct /*showAlert={showAlert}*//></Route>
                             <Route path="/allproduct"><Allproduct/></Route>
                             <Route path="/updateproduct/:productId"><Updateproduct showAlert={showAlert}/></Route>
                             <Route path="/viewproduct/:productId"><Viewproduct showAlert={showAlert}/></Route>

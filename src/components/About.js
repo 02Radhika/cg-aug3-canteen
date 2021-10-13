@@ -2,7 +2,7 @@ import React from "react";
 import "../components/Home.css";
 import slide1 from '../assets/images/Radhika.jpg';
 import slide2 from '../assets/images/Neha.jpg';
-import slide3 from '../assets/images/Vaish.jpeg';
+import slide3 from '../assets/images/Vaish.jpg';
 import slide4 from '../assets/images/Akanksha.jpg';
 import slide5 from '../assets/images/Mrunal.jpg';
 import slide6 from '../assets/images/Kanchan.jpg';
@@ -19,7 +19,7 @@ const About=()=>{
                <div className="col-1"/>
                 <div className="col-3 ">
                     <div className="card" style={{width: "18rem;"}}>
-                        <img src={slide2} class="card-img-top" alt="..."/>
+                        <img src={slide1} class="card-img-top" alt="..."/>
                         <div className="card-body">
                             <p className="card-text">This is Admin module</p>
                         </div>
@@ -28,7 +28,7 @@ const About=()=>{
 
                 <div className="col-3 ">
                     <div className="card" style={{width: "18rem;"}}>
-                        <img src={slide2} class="card-img-top" alt="..."/>
+                        <img src={slide3} class="card-img-top" alt="..."/>
                         <div className="card-body">
                             <p className="card-text">This is Admin module</p>
                         </div>
@@ -45,11 +45,11 @@ const About=()=>{
                 </div>
            </div>
 
-           <div className="row">
+           <div className="row my-2">
            <div className="col-1"/>
            <div className="col-3 ">
                     <div className="card" style={{width: "18rem;"}}>
-                        <img src={slide2} class="card-img-top" alt="..."/>
+                        <img src={slide4} class="card-img-top" alt="..."/>
                         <div className="card-body">
                             <p className="card-text">This is Admin module</p>
                         </div>
@@ -58,7 +58,7 @@ const About=()=>{
 
                 <div className="col-3 ">
                     <div className="card" style={{width: "18rem;"}}>
-                        <img src={slide2} class="card-img-top" alt="..."/>
+                        <img src={slide5} class="card-img-top" alt="..."/>
                         <div className="card-body">
                             <p className="card-text">This is Admin module</p>
                         </div>
@@ -67,7 +67,7 @@ const About=()=>{
 
                 <div className="col-3 ">
                     <div className="card" style={{width: "18rem;"}}>
-                        <img src={slide2} class="card-img-top" alt="..."/>
+                        <img src={slide6} class="card-img-top" alt="..."/>
                         <div className="card-body">
                             <p className="card-text">This is Admin module</p>
                         </div>

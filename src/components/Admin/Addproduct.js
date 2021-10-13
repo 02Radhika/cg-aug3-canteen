@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import base_url from "../../api/Bootapi";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 const AddProduct = (props) => {
   let history = useHistory();
@@ -134,9 +134,9 @@ const AddProduct = (props) => {
               required
             />
           </div>
-          <button className="btn btn-primary btn-block">Add Menu</button>
+          <button className="btn btn-primary btn-block" data-testid="submit1">Add Menu</button>
           <button className="btn btn-primary btn-block" type="reset"  onClick={reset}>Clear</button>
-          <Link className="btn btn-primary btn-block" to="/dashboard">Back to Dashboard</Link>
+          {/* <Link className="btn btn-primary btn-block" to="/dashboard">Back to Dashboard</Link> */}
         </form>
       </div>
     </div>
