@@ -21,7 +21,7 @@ const About=()=>{
                     <div className="card" style={{width: "18rem;"}}>
                         <img src={slide1} class="card-img-top" alt="..."/>
                         <div className="card-body">
-                            <p className="card-text">This is Admin module</p>
+                            <p className="card-text">Radhika Rathi <br/> Experience-3 Years</p>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ const About=()=>{
                     <div className="card" style={{width: "18rem;"}}>
                         <img src={slide3} class="card-img-top" alt="..."/>
                         <div className="card-body">
-                            <p className="card-text">This is Admin module</p>
+                            <p className="card-text">Vaishnavi Bharambe <br/> Experience-3 Years</p>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ const About=()=>{
                     <div className="card" style={{width: "18rem;"}}>
                         <img src={slide2} class="card-img-top" alt="..."/>
                         <div className="card-body">
-                            <p className="card-text">This is Admin module</p>
+                            <p className="card-text">Neha Chikale <br/> Experience-4 Years</p>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ const About=()=>{
                     <div className="card" style={{width: "18rem;"}}>
                         <img src={slide4} class="card-img-top" alt="..."/>
                         <div className="card-body">
-                            <p className="card-text">This is Admin module</p>
+                            <p className="card-text">Akanksha Kale <br/> Experience-4 Years</p>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ const About=()=>{
                     <div className="card" style={{width: "18rem;"}}>
                         <img src={slide5} class="card-img-top" alt="..."/>
                         <div className="card-body">
-                            <p className="card-text">This is Admin module</p>
+                            <p className="card-text">Mrunal Deshmukh <br/> Experience-3.7 Years</p>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ const About=()=>{
                     <div className="card" style={{width: "18rem;"}}>
                         <img src={slide6} class="card-img-top" alt="..."/>
                         <div className="card-body">
-                            <p className="card-text">This is Admin module</p>
+                            <p className="card-text">Kanchan Shamde <br/> Experience-3 Years</p>
                         </div>
                     </div>
                 </div>
@@ -90,6 +90,9 @@ const About=()=>{
                quick break is something that allows everyone to make the most of their day.
 
             </p>
+            <h4 style={{ color: 'black' }}>For Any Quries Contact</h4>
+            <p style={{font:"20px"}}>Email:BuddiesCanteen@gmail.com<br/>
+            Telephone Number:0253-456789 </p>
         </div>
 
        
