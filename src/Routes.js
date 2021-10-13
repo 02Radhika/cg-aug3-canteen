@@ -26,9 +26,11 @@ import Creport from './components/Admin/Creport';
 import Addstaff from './components/Admin/Addstaff';
 import { useState } from 'react';
 import Alert from "./components/Alert";
+import Oreport from "./components/Admin/Oreport";
 //const history=createBrowserHistory(); 
 const Routes = () => {
-    const [alert, setAlert] = useState(null);
+
+   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type)=>{
     setAlert({
@@ -65,6 +67,7 @@ const Routes = () => {
                             <Route path="/updateproduct/:productId"><Updateproduct showAlert={showAlert}/></Route>
                             <Route path="/viewproduct/:productId"><Viewproduct showAlert={showAlert}/></Route>
                             <Route path="/creport"><Creport/></Route>
+                            <Route path="/oreport"><Oreport/></Route>
                             <Route path="/menu"><Menus/></Route>
                             <Route path="/addstaff"><Addstaff/></Route>
                             <Route path="/*"> <PageNotFound /> </Route>

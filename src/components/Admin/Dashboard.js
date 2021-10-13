@@ -4,7 +4,7 @@ import Poster from '../Poster';
 import Tab from '../Admin/Tab';
 import Menus from './Menus';
 import Producttable from './Producttable';
-
+import '../../components/Home.css';
  
 
 function Dashboard(props) {
@@ -17,7 +17,7 @@ function Dashboard(props) {
   }
 
   return (
-        <div>
+        <div className="Admin">
           <Poster/>
           <Tab/>
           <Producttable/>

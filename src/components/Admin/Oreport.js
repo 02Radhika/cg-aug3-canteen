@@ -6,17 +6,18 @@ import axios from "axios";
 
 
 
-function Oreport(){
+function Creport(){
     
-    const [orders, setOrders] = useState([]);
+    const [customers, setCustomer] = useState([]);
 
     useEffect(() => {
-        loadOrders();
+        loadCustomer();
     }, []);
 
-    const loadOrders = async () => {
+    const loadCustomer = async () => {
         const result = await axios.get(`${base_url}/getAllCustomer`);
         setCustomer(result.data);
+        console.log(result.data);
     };
 
     
@@ -24,29 +25,29 @@ function Oreport(){
   return (
         <div className="container">
         <div className="py-4">
-            <h1>Customer Report</h1>
+            <h1>Order Report Per Customer </h1>
             <table class="table border shadow">
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>
+                <th scope="col">Order Id</th>
+                <th scope="col">Total Price</th>
+                <th scope="col">Status</th>
+                <th scope="col">Date</th>
                 <th scope="col">Customer Name</th>
-                <th scope="col">Customer Address</th>
-                <th scope="col">Customer City</th>
-                <th scope="col">Customer Gender</th>
-                <th scope="col">Customer Phone</th>
-                <th scope="col">Customer Username</th>
+                <th scope="col">Customer Id</th>
                 </tr>
             </thead>
             <tbody>
                 {customers.map((customer, index) => (
                 <tr>
                     <th scope="row">{index+1}</th>
+                    <td>{customer.orders.orders_id}</td>
+                    <td>{customer.orders.totalPrice}</td>
+                    <td>{customer.orders.status}</td>
+                    <td>{customer.orders.date}</td>
                     <td>{customer.cName}</td>
-                    <td>{customer.cAddress}</td>
-                    <td>{customer.cCity}</td>
-                    <td>{customer.cGender}</td>
-                    <td>{customer.cPhone}</td>
-                    <td>{customer.cUsername}</td>
+                    <td>{customer.cId}</td>
                     
                 </tr>
                 ))}
@@ -58,4 +59,4 @@ function Oreport(){
     );
 }
 
-export default Oreport;
+export default Creport;

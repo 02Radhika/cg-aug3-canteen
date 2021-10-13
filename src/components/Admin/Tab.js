@@ -24,7 +24,7 @@ function Tab() {
             </li>
 
             <li className="nav-item ">
-                <Link className="nav-link text-light bg-dark mx-1" to="/creport" >Order Details Report</Link>
+                <Link className="nav-link text-light bg-dark mx-1" to="/oreport" >Order Details Report</Link>
             </li>
 
             <li className="nav-item ">

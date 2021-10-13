@@ -36,6 +36,7 @@ const Updateproduct = (props) => {
   const updateQty=(e)=>{
 
     let menu={
+            menuId:product.menu.menuId,
             menuQuntity:e.target.value
         }
     setProduct({...product,menu});
@@ -65,6 +66,7 @@ const Updateproduct = (props) => {
     const productPriceErr={};
     let isValid=true;
     //var namePattern = new RegExp(/^[a-zA-Z ]+$/);
+    debugger
     if(!productName.match(new RegExp(/^[a-zA-Z ]+$/))){
       productNameErr.productrejex="Product Name Should Container Character";
       //setProduct({ productName: ''})

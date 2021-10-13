@@ -61,14 +61,15 @@ const AddProduct = (props) => {
     const productPriceErr={};
     let isValid=true;
     //var namePattern = new RegExp(/^[a-zA-Z ]+$/);
+    debugger
     if(!productName.match(new RegExp(/^[a-zA-Z ]+$/))){
       productNameErr.productrejex="Product Name Should Container Character";
-      setProduct({ productName: ''})
+      setProduct({...product,productName: ''})
       isValid=false;
     }
     if(!productPrice.match(new RegExp(/^[+]?[0-9]+$/))){
       productPriceErr.propricterr="Product Price Should Container Number";
-      setProduct({ productPrice: ''})
+      setProduct({...product,productPrice: ''})
       isValid=false;
     }
     setproductNameErr(productNameErr);
@@ -115,7 +116,6 @@ const AddProduct = (props) => {
           </div>
           
           <div className="form-group">
-
               <select value={product.productCategory} className="form-control form-control-lg" onChange={e=>handleChange(e)}>
                 <option value=""></option>           
                 <option value="Snacks">Snacks</option>

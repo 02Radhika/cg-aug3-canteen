@@ -3,13 +3,17 @@ import Admin from '../assets/images/Admin.jpg'
 import Customer from '../assets/images/Customer.png'
 import Staff from '../assets/images/Staff.png'
 import { Link } from 'react-router-dom';
+import './Home.css'
 
 const Card=()=>{
     return(
+        <div className="Card">
+        <div className="container" >
 
-        <div className="container "style={{ marginTop: '1rem' }} >
-            <div className="row">
-                <div className="col-4">
+            <div className="row" >
+                
+                <div className="col-2"></div>
+                <div className="col-3 mx-1" style={{ marginTop: '1rem' }}>
                     <div className="card" style={{width: '18rem'}}>
                         <img src={Admin} className="card-img-top" alt="..."/>
                         <div className="card-body">
@@ -22,7 +26,7 @@ const Card=()=>{
 
 
 
-                <div className="col-4">
+                <div className="col-3 mx-1" style={{ marginTop: '1rem' }}>
                     <div className="card" style={{width: '18rem'}}>
                         <img src={Staff} className="card-img-top" alt="..."/>
                         <div className="card-body">
@@ -34,7 +38,7 @@ const Card=()=>{
                 </div>
 
 
-                <div className="col-4">
+                <div className="col-3 mx-1" style={{ marginTop: '1rem' }}>
                     <div className="card" style={{width: '18rem'}}>
                         <img src={Customer} className="card-img-top" alt="..."/>
                         <div className="card-body">
@@ -50,6 +54,7 @@ const Card=()=>{
 
             </div>
                 
+        </div>
         </div>
     );
 }

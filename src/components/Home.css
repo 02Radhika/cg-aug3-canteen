@@ -1,0 +1,66 @@
+
+.Home{
+    background: linear-gradient(rgba(0,0,0,0.5),#001414),url(https://images.unsplash.com/photo-1560341208-305f47d5e901?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 93vh;
+    overflow-x: hidden;
+  }
+
+
+  .About  {
+    background:url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v960-ning-30.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=63dd5f402645ef52fb7dfb592aec765a);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 215vh;
+    overflow-x: hidden;
+} 
+
+.Title{
+  font-size: 100px;
+  color: rgb(5, 131, 36);
+  font-weight:300;
+}
+
+ .Card{
+  background:linear-gradient(rgba(0,0,0,0.5),#738052),url(https://www.teahub.io/photos/full/6-63607_background-images-food-hd.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 93vh;
+    
+} 
+
+.Login{
+   background:url(https://st3.depositphotos.com/1558912/19061/i/1600/depositphotos_190618700-stock-photo-italian-food-background-on-white.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 90vh;
+}
+  /* rgba(211, 190, 190, 0.5),#656e57), */
+
+.Admin{
+  background:url(https://thumbs.dreamstime.com/z/greek-food-background-traditional-different-dishes-top-view-close-up-143835881.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 90vh;
+}

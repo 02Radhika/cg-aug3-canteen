@@ -29,7 +29,7 @@ function Producttable(props){
             (Response)=>{
                 debugger
                 alert("product deleted sucessfully");
-                loadProduct();
+                //loadProduct();
                 //props.history.push("/dashboard");
 
                 //update(productId);
@@ -38,6 +38,9 @@ function Producttable(props){
                 console.log("error");
             }
         )
+
+
+        
     };
 
   return (

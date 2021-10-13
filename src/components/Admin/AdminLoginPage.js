@@ -2,7 +2,7 @@ import  axios  from 'axios';
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import base_url from "../../api/Bootapi";
-
+import '../../components/Home.css';
 
   function AdminLoginPage(props) {
     const [loading, setLoading] = useState(false);
@@ -31,9 +31,9 @@ import base_url from "../../api/Bootapi";
     }
   
   return (
-    
+    <div className="Login">
     <div className="container">
-      <div className="form-control form-control-lg">
+      <div className="form-control  form-control-lg">
       <h2 className="text-center mb-4 ">Admin Login</h2>
           <form>
             <div className="form-group">
@@ -58,6 +58,7 @@ import base_url from "../../api/Bootapi";
             <button className="btn btn-primary btn-block" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} >Login</button>
           </form>
       </div>
+    </div>
     </div>
     
   );
