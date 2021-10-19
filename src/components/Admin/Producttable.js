@@ -27,7 +27,7 @@ function Producttable(props){
 
         axios.delete(`${base_url}/deleteProduct/${productId}`).then(
             (Response)=>{
-                debugger
+                //debugger
                 alert("product deleted sucessfully");
                 //loadProduct();
                 //props.history.push("/dashboard");

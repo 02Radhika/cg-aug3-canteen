@@ -32,7 +32,7 @@ const AddProduct = (props) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
   };
   
-  
+
   const handleChange=(e)=>{
     debugger
     let category=product;
@@ -83,7 +83,7 @@ const AddProduct = (props) => {
   return (
     <div className="Addproduct container">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4 ">Add A Product</h2>
+        <h2 className="text-center mb-4" style={{ color: 'white' }}>Add Product</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <div>{Object.keys(productNameErr).map((key)=>{

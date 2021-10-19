@@ -3,23 +3,29 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import base_url from "../../api/Bootapi";
 import '../../components/Home.css';
+import { useLocalStorage } from '../Uselocalstrorage';
+
 
   function AdminLoginPage(props) {
     const [loading, setLoading] = useState(false);
     const adminUsername = useFormInput('');
     const adminPassword = useFormInput('');
     const [error, setError] = useState(null);
-   
+    
+     
+    
+
     // handle button click of login form
     const handleLogin = () => {
       setError(null);
       setLoading(true);
 
       
-      const params = { adminUsername: adminUsername.value, adminPassword: adminPassword.value };
+    const params = { adminUsername: adminUsername.value, adminPassword: adminPassword.value };
 
     axios.post(`${base_url}/loginAdmin`, { adminUsername: adminUsername.value, adminPassword: adminPassword.value }).then(response => {
       setLoading(false);
+    
       //this.setState(response.data);
       props.history.push('/dashboard');
     }).catch(error => {
@@ -29,7 +35,7 @@ import '../../components/Home.css';
     });
 
     }
-  
+    
   return (
     <div className="Login">
     <div className="container">
@@ -40,9 +46,11 @@ import '../../components/Home.css';
               <input
                 type="email" {...adminUsername}
                 //pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                // value={Username}
                 className="form-control form-control-lg"
                 placeholder="Enter Admin UserName"
-                required
+                //onChange={(e) => setName(e.target.value)}
+                
               />
             </div>
 

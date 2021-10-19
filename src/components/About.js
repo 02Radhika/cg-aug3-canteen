@@ -13,7 +13,7 @@ const About=()=>{
     return(
 
        <div className="About">
-           <h1 className="my-3 text-center mt-2 mb-8"> Our Team </h1>
+           <h1 className="my-3 text-center mt-2 mb-8">Our Founders</h1>
 
            <div className="row">
                <div className="col-1"/>

@@ -57,7 +57,7 @@
   /* rgba(211, 190, 190, 0.5),#656e57), */
 
 .Admin{
-  background:url(https://image.shutterstock.com/image-photo/admin-login-sign-made-wood-260nw-391517770.jpg);
+  background:linear-gradient(rgba(169, 185, 137, 0.5),#b8c0a5),url(https://image.shutterstock.com/image-photo/admin-login-sign-made-wood-260nw-391517770.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -68,7 +68,7 @@
 }
 
 .View{
-  background:linear-gradient(rgba(83, 49, 49, 0.5),#4b572e),url(http://www.saurabhkarwal.com/wp-content/uploads/2018/03/Background-opera-speeddials-community-web-simple-backgrounds.jpg);
+  background:linear-gradient(rgba(41, 26, 26, 0.5),#4b572e),url(http://www.saurabhkarwal.com/wp-content/uploads/2018/03/Background-opera-speeddials-community-web-simple-backgrounds.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
